@@ -1,6 +1,4 @@
-# Group Buddies - Puppet
-
-This repository defines the `gb` puppet module to provision our VM's.
+# Group Buddies - Provisioning
 
 Refer to the [wiki](https://github.com/groupbuddies/gb-provisioning/wiki) for
 more info
