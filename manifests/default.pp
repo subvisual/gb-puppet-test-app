@@ -1,3 +1,5 @@
+include gb
+
 gb::user { 'deploy': }
 
 gb::public_keys { 'deploy': }
