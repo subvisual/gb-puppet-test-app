@@ -13,7 +13,7 @@ class { gb::rvm_install:
 }
 
 
-class { gb::nginx: }
+class { nginx: }
 
 nginx::resource::vhost { 'teste1':
   ensure      => present,
