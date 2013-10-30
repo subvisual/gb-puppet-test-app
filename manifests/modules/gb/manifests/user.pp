@@ -1,4 +1,4 @@
-class gb::user ($name=undef) {
+define gb::user {
   user { $name:
     ensure     => present,
     home       => "/home/$name",
