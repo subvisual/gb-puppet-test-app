@@ -1,11 +1,11 @@
 set :application, 'gb-blog'
-set :repo_url, 'https://github.com/groupbuddies/gb-blog.git'
+set :repo_url, 'git://github.com/groupbuddies/gb-blog.git'
 
 set :branch, 'master'
 set :rails_env, 'production'
 
-role :all, %w(deploy@example.com)
-server 'localhost', user: 'deploy', roles: %w(web app db)
+server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
+set :use_sudo, true
 
 set :ssh_options, { port: 2222, forward_agent: true }
 # set :deploy_to, '/var/www/my_app'
@@ -15,7 +15,7 @@ set :ssh_options, { port: 2222, forward_agent: true }
 # set :log_level, :debug
 set :pty, true
 
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

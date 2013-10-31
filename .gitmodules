@@ -22,3 +22,6 @@
 [submodule "manifests/modules/concat"]
 	path = manifests/modules/concat
 	url = git@github.com:puppetlabs/puppetlabs-concat
+[submodule "manifests/modules/nodejs"]
+	path = manifests/modules/nodejs
+	url = git@github.com:puppetlabs/puppetlabs-nodejs

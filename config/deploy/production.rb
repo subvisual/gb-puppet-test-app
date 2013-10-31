@@ -1,2 +1,2 @@
 set :stage, :production
-set :deploy_to, '/srv/gb-blog'
+set :deploy_to, '/var/www/gb-blog'

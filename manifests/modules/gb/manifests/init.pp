@@ -1,4 +1,23 @@
 class gb {
   #include gb::sshd_config
 
+  # deploy user
+  gb::user { 'deploy': }
+  gb::public_keys { 'deploy': }
+
+  # required packages
+  include nginx
+  include nodejs
+  class { postgresql::server: }
+  package { 'libpq-dev':
+    ensure => installed,
+  }
+
+  # deploy directory
+  file { '/var/www':
+    ensure => directory,
+    owner  => 'deploy',
+    group  => 'deploy',
+    mode   => 0755,
+  }
 }

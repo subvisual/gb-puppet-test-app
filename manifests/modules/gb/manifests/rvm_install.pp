@@ -18,6 +18,8 @@ class gb::rvm_install ($ruby_version=undef, $rvm_version=undef) {
     version => $rvm_version,
   }
 
+  rvm::system_user { 'deploy': }
+
   rvm_system_ruby { $ruby_version:
     ensure      => present,
     default_use => true,
