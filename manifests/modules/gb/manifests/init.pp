@@ -1,4 +1,4 @@
 class gb {
-  include gb::sshd_config
+  #include gb::sshd_config
 
 }

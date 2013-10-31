@@ -15,7 +15,7 @@ class gb::rvm_install ($ruby_version=undef, $rvm_version=undef) {
   }
 
   class { rvm:
-    version => $rvm_version
+    version => $rvm_version,
   }
 
   rvm_system_ruby { $ruby_version:

@@ -36,7 +36,7 @@ define gb::public_keys {
 
   exec { $script:
     command     => "${script} ${repo_path} ${name}",
-    #refreshonly => true,
+    refreshonly => true,
     require     => File[$script],
     notify      => File[$auth_keys_file],
   }
