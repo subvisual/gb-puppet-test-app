@@ -20,4 +20,20 @@ class gb {
     group  => 'deploy',
     mode   => 0755,
   }
+
+  file { '/etc/nginx/conf.d/default.conf':
+    ensure => absent,
+  }
+
+  # /var/run/deploy access
+  file { '/run':
+    ensure => present,
+  }
+  ->
+  file { '/run/deploy':
+    ensure => directory,
+    owner  => 'deploy',
+    group  => 'deploy',
+    mode   => 0644,
+  }
 }

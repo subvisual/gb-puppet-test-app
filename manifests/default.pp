@@ -4,12 +4,14 @@ class { gb::rvm_install:
   ruby_version => 'ruby-2.0.0-p247',
 }
 
-gb::rails_app { 'gb-blog':
-  port    => 3001,
-  db_pass => 'password',
+gb::app::rails { 'gb-blog':
+  port      => 8080,
+  db_pass   => 'password',
+  url       => 'blog.groupbuddies.com',
 }
 
-gb::rails_app { 'test.gb-blog':
-  port    => 3002,
-  db_pass => 'password',
+gb::app::rails { 'test.gb-blog':
+  port      => 8080,
+  db_pass   => 'password',
+  url       => 'test.blog.groupbuddies.com',
 }

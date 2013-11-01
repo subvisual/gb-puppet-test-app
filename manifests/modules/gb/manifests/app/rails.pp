@@ -1,24 +1,13 @@
-define gb::rails_app (
+define gb::app::rails (
   $rails_env = 'production',
   $port      = 80,
   $db_pass   = undef,
+  $server    = 'puma',
+  $url       = undef,
 ) {
 
   $capistrano_root = "/var/www/${name}"
   $db_yml = "${capistrano_root}/shared/config/database.yml"
-
-  # nginx entry
-  nginx::resource::upstream { $name:
-    ensure  => present,
-    members => ['localhost:3000'],
-  }
-
-  nginx::resource::vhost { $name:
-    ensure      => present,
-    proxy       => "http://${name}",
-    #www_root    => "${capistrano_root}/current/public",
-    #listen_port => $port,
-  }
 
   # database role
   postgresql::server::role { $name:
@@ -31,7 +20,7 @@ define gb::rails_app (
   }
 
   # shared/config/database.yml
-  file { [$capistrano_root, "${capistrano_root}/shared", "${capistrano_root}/shared/config" ]:
+  file { [$capistrano_root, "${capistrano_root}/shared", "${capistrano_root}/shared/config", "${capistrano_root}/shared/sockets" ]:
     ensure => directory,
     owner  => 'deploy',
     group  => 'deploy',
@@ -44,5 +33,17 @@ define gb::rails_app (
     notify  => Service[nginx],
   }
 
+  # web server
+  case $server {
+    puma: { gb::server::puma { $name:
+        root    => "${capistrano_root}/current/public",
+        port    => $port,
+        url     => $url,
+        require => File["${capistrano_root}/shared/sockets"]
+      }
+    }
 
+    undef:   { notice("No server defined for app ${name}") }
+    default: { fail("Server ${server} not supported") }
+  }
 }

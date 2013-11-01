@@ -5,8 +5,9 @@ set :branch, 'master'
 set :rails_env, 'production'
 
 server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
-set :use_sudo, true
+#set :use_sudo, true
 
+set :default_shell, 'bash -l'
 set :ssh_options, { port: 2222, forward_agent: true }
 # set :deploy_to, '/var/www/my_app'
 # set :scm, :git

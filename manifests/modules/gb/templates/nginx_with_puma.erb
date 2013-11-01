@@ -1,0 +1,24 @@
+upstream <%= @name %> {
+  server unix:///var/www/<%= @name %>/shared/sockets/puma.sock;
+}
+
+server {
+  listen <%= @port %>;
+  server_name <%= @url %>;
+  root <%= @root %>;
+
+  location / {
+    proxy_pass http://<%= @name %>;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+  location ~* ^/assets/ {
+    expires 1y;
+    add_header Cache-Control public;
+
+    add_header Last-Modified "";
+    add_header ETag "";
+    break;
+  }
+}
