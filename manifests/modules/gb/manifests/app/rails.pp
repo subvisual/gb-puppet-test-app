@@ -1,9 +1,10 @@
 define gb::app::rails (
   $rails_env = 'production',
-  $port      = 80,
   $db_pass   = undef,
   $server    = 'puma',
   $url       = undef,
+  $port      = 80,
+  $ssl       = false,
 ) {
 
   $capistrano_root = "/var/www/${name}"
