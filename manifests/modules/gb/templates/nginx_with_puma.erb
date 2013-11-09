@@ -4,7 +4,8 @@ upstream <%= @name %> {
 
 server {
   listen <%= @port %>;
-  server_name <%= @url %>;
+  server_name www.<%= @url %>;
+  rewrite ^(.*)$ $scheme://<%= @url %>$1;
   root <%= @root %>;
 
   location / {
