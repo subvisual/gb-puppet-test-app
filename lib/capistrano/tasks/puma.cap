@@ -5,7 +5,7 @@ namespace :puma do
   task :start => 'rvm:hook' do
     on roles :app do
       within current_path do
-        puma_exec start_options
+        background :bundle, :exec, :puma, start_options
       end
     end
   end
