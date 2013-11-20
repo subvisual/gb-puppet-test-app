@@ -1,5 +1,5 @@
-set :application, 'gb-blog'
-set :repo_url, 'git://github.com/groupbuddies/gb-blog.git'
+set :application, 'test-app'
+set :repo_url, 'git://github.com/naps62/the_well_provisioned_test_app'
 
 set :branch, 'master'
 set :rails_env, 'production'
