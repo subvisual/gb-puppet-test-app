@@ -7,7 +7,7 @@ mod 'puppetlabs/nodejs',     '0.4.0'
 mod 'puppetlabs/postgresql', '3.2.0'
 
 mod 'rvm',
-  git: 'git://github.com/blt04/puppet-rvm'
+  git: 'git://github.com/naps62/puppet-rvm'
 
 mod 'git',
   git: 'git://github.com/nesi/puppet-git',

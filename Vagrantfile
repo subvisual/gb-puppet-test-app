@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, host: 8080, guest: 8080
 
   config.vm.provision :puppet do |puppet|
-    puppet.module_path = 'manifests/modules'
+    puppet.module_path = 'modules'
     puppet.manifests_path = 'manifests'
     puppet.manifest_file = 'default.pp'
   end

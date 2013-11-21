@@ -2,7 +2,6 @@ set :application, 'test-app'
 set :repo_url, 'git://github.com/naps62/the_well_provisioned_test_app'
 
 set :branch, 'master'
-set :rails_env, 'production'
 
 server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
 #set :use_sudo, true

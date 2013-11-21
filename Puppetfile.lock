@@ -18,22 +18,22 @@ FORGE
     puppetlabs/stdlib (4.1.0)
 
 GIT
-  remote: git://github.com/blt04/puppet-rvm
-  ref: master
-  sha: 6b5591f297b1a46fc19e110e9c1031d80a326dce
-  specs:
-    rvm (1.0.0)
-
-GIT
   remote: git://github.com/naps62/gb-puppet
   ref: master
-  sha: c08421c614656a2a40aa4c0b60e97a7a95a92eec
+  sha: a8e0b67d642f8ea9f0e39439ac26b045a339696a
   specs:
     gb (0.0.1)
       jfryman/nginx (>= 0.0.5)
       puppetlabs/apt (>= 1.4.0)
       puppetlabs/nodejs (>= 0.4.0)
       puppetlabs/postgresql (>= 3.1.0)
+
+GIT
+  remote: git://github.com/naps62/puppet-rvm
+  ref: master
+  sha: 46595c7744f64fdbdad8ed9b0f64885e40294d7a
+  specs:
+    rvm (0.0.1)
 
 GIT
   remote: git://github.com/nesi/puppet-git
