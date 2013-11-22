@@ -16,17 +16,19 @@ FORGE
       puppetlabs/firewall (>= 0.0.4)
       puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs/stdlib (4.1.0)
+    saz/sudo (2.2.0)
 
 GIT
   remote: git://github.com/naps62/gb-puppet
   ref: master
-  sha: f575109fcde27419d77a60ecc41dc973bd547cdf
+  sha: fc5f008e15fe4f6de814ee462af691861de56d5c
   specs:
     gb (0.0.1)
       jfryman/nginx (>= 0.0.5)
       puppetlabs/apt (>= 1.4.0)
       puppetlabs/nodejs (>= 0.4.0)
       puppetlabs/postgresql (>= 3.1.0)
+      saz/sudo (>= 2.2.0)
 
 GIT
   remote: git://github.com/naps62/puppet-rvm
@@ -50,4 +52,5 @@ DEPENDENCIES
   puppetlabs/nodejs (= 0.4.0)
   puppetlabs/postgresql (= 3.2.0)
   rvm (>= 0)
+  saz/sudo (= 2.2.0)
 

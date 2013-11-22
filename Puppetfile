@@ -2,9 +2,10 @@ forge 'http://forge.puppetlabs.com'
 
 
 mod 'puppetlabs/apt',        '1.4.0'
-mod 'jfryman/nginx',      '0.0.5'
+mod 'jfryman/nginx',         '0.0.5'
 mod 'puppetlabs/nodejs',     '0.4.0'
 mod 'puppetlabs/postgresql', '3.2.0'
+mod 'saz/sudo',              '2.2.0'
 
 mod 'rvm',
   git: 'git://github.com/naps62/puppet-rvm'

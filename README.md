@@ -24,10 +24,14 @@ staging mode:
     bundle exec cap production deploy # for production app
     bundle exec cap staging deploy    # for staging app
 
-Now you should be able to go to the following urls:
+You should be able to go to the following urls and see both app instances
+working
 
     localhost:8443 # production test app
     localhost:8080 # staging test app
+
+Note: It might take a while for the apps to boot, since service restart is
+managed by Monit
 
 ## Some more random info
 
