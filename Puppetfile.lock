@@ -21,7 +21,7 @@ FORGE
 GIT
   remote: git://github.com/naps62/gb-puppet
   ref: master
-  sha: fc5f008e15fe4f6de814ee462af691861de56d5c
+  sha: d72f7fb0ed5141bf6627cb84bd5f893adeac712a
   specs:
     gb (0.0.1)
       jfryman/nginx (>= 0.0.5)

@@ -1,7 +1,7 @@
 $data = hiera('gb-provisioning')
 
 class { gb:
-  ruby_version    => 'ruby-2.0.0-p247',
+  ruby_version    => 'ruby-2.0.0-p353',
   deploy_password => "password",
 }
 
@@ -20,7 +20,7 @@ gb::app::rails { 'staging':
 
 # Vagrant stuff. allow vagrant user to sudo
 sudo::conf { 'exempt':
-  priority => 13,
+  priority => 01,
   content  => "
 Defaults env_reset
 Defaults exempt_group=vagrant",

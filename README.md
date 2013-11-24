@@ -30,8 +30,8 @@ working
     localhost:8443 # production test app
     localhost:8080 # staging test app
 
-Note: It might take a while for the apps to boot, since service restart is
-managed by Monit
+Note: Be patient if nothing shows up at first. Service restart is managed by
+Monit, and may take a couple of minutes.
 
 ## Some more random info
 
