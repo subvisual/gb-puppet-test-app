@@ -15,7 +15,7 @@ Fetch dependencies:
 Now follow one of the installation options:
 
 * [Puppet](#puppet-installation)
-* [Dokku](#dokku)
+* [Dokku](#dokku-installation)
 
 ## Puppet installation
 
