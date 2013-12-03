@@ -1,6 +1,6 @@
 # Group Buddies - Provisioning test repo
 
-## Install
+## Setup
 
 First, download the repo:
 
@@ -12,11 +12,16 @@ Fetch dependencies:
     bundle
     bundle exec librarian-puppet install
 
-And setup the vagrant machine (this should take a while)
+Now follow one of the installation options:
 
-    vagrant up
+* [Puppet](#puppet-installation)
+* [Dokku](#dokku)
 
-## Deploy
+## Puppet installation
+
+Setup the vagrant machine (this should take a while)
+
+    vagrant up puppet
 
 You can now deploy a test app to the vagrant machine, both in production and
 staging mode:
@@ -32,6 +37,40 @@ working
 
 Note: Be patient if nothing shows up at first. Service restart is managed by
 Monit, and may take a couple of minutes.
+
+## Dokku installation
+
+Setup the vagrant machine (this should take a while)
+
+    vagrant up dokku
+
+Setup your `/etc/hosts` file for easier access to the machine, by adding this
+line
+
+    127.0.0.1 gb-provisioning.dokku.me dokku.me
+
+Now install dokku inside the VM:
+
+    vagrant ssh dokku
+    wget -qO - https://raw.github.com/progrium/dokku/v0.2.0/bootstrap.sh | sudo DOKKU_TAG=v0.2.0 bash
+
+Send in your public key so you can push to the dokku remote (replace
+`YOUR_USERNAME` with your actual desired username):
+
+    cat ~/.ssh/id_rsa.pub | vagrant ssh dokku -c 'sudo sshcommand acl-add dokku
+    YOUR_USERNAME'
+
+Install the required plugins for dokku:
+
+    vagrant ssh dokku
+    cd /var/lib/dokku/plugins
+    sudo git clone http://github.com/Kloadut/dokku-pg-plugin
+    dokku plugins-install
+
+Go to the app you want to deploy ([this repo](https://github.com/naps62/the_well_provisioned_test_app)) is a good starting point) and do this:
+
+    git remote add vagrant git@dokku.me:gb-provisioning
+    git push vagrant master
 
 ## Some more random info
 

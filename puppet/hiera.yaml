@@ -1,8 +1,13 @@
 ---
+:logger: console
+
 :hierarchy:
   - "%{hostname}"
   - common
+
 :backends:
   - yaml
+  - gpg
+
 :yaml:
-  :datadir: '/vagrant/hieradata'
+  :datadir: '/vagrant/puppet/hieradata'
