@@ -47,34 +47,30 @@ Setup the vagrant machine (this should take a while)
 Setup your `/etc/hosts` file for easier access to the machine, by adding this
 line
 
-    127.0.0.1 gb-provisioning.dokku.me dokku.me
+    10.0.0.2 gb-provisioning.dokku.me dokku.me
 
-Now install dokku inside the VM:
+Install dokku via the provided helper script:
 
-    vagrant ssh dokku
-    wget -qO - https://raw.github.com/progrium/dokku/v0.2.0/bootstrap.sh | sudo DOKKU_TAG=v0.2.0 bash
+    ./dokku/provision.sh PUBLIC_KEY USERNAME
 
-Send in your public key so you can push to the dokku remote (replace
-`YOUR_USERNAME` with your actual desired username):
+By default, `PUBLIC_KEY` will default to `~/.ssh/id_rsa.pub`, and `USERNAME` to
+`$(whoami)`
 
-    cat ~/.ssh/id_rsa.pub | vagrant ssh dokku -c 'sudo sshcommand acl-add dokku
-    YOUR_USERNAME'
+This will install dokku, along with the postgresql plugin, and add your public
+key so you can deploy to the VM.
 
-Install the required plugins for dokku:
-
-    vagrant ssh dokku
-    cd /var/lib/dokku/plugins
-    sudo git clone http://github.com/Kloadut/dokku-pg-plugin
-    dokku plugins-install
-
-Go to the app you want to deploy ([this repo](https://github.com/naps62/the_well_provisioned_test_app)) is a good starting point) and do this:
+Next, go to the app you want to deploy ([this repo](https://github.com/naps62/the_well_provisioned_test_app) is a good starting point) and do this:
 
     git remote add vagrant git@dokku.me:gb-provisioning
     git push vagrant master
 
+After the first deploy, run the database creation script:
+
+    ./dokku/database.sh
+
 ## Some more random info
 
-* The real juice comes from [this repo](https://github.com/naps62/gb-puppet)
+* The real juice from puppet comes from [this repo](https://github.com/naps62/gb-puppet)
 * Both the production and staging apps are instances of [this
 repo](https://github.com/naps62/the_well_provisioned_test_app)
 

@@ -1,9 +1,16 @@
-$data = hiera('gb-provisioning')
-
 class { gb:
   ruby_version    => 'ruby-2.0.0-p353',
   deploy_password => "password",
 }
+
+# Vagrant stuff. allow vagrant user to sudo
+sudo::conf { 'vagrant':
+  priority => 01,
+  content  => "
+%vagrant ALL = NOPASSWD: ALL",
+}
+
+$data = hiera('gb-provisioning')
 
 gb::app::rails { 'production':
   port    => 8443,
@@ -17,12 +24,3 @@ gb::app::rails { 'staging':
   url       => $data[staging][db_pass],
   rails_env => 'staging',
 }
-
-# Vagrant stuff. allow vagrant user to sudo
-sudo::conf { 'exempt':
-  priority => 01,
-  content  => "
-Defaults env_reset
-Defaults exempt_group=vagrant",
-}
-

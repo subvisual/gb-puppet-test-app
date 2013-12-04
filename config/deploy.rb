@@ -6,7 +6,7 @@ set :default_shell, 'bash -l'
 set :ssh_options, { port: 2222, forward_agent: true }
 
 set :format, :pretty
-set :log_level, :info
+set :log_level, :debug
 set :pty, true
 
 set :linked_files, %w{config/database.yml}
