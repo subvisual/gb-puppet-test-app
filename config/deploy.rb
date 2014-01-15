@@ -16,7 +16,6 @@ set :keep_releases, 3
 
 namespace :deploy do
   desc 'Restart application'
-  task :restart => 'monit:restart'
 
   after :finishing, 'deploy:cleanup'
 end

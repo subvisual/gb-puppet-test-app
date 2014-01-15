@@ -7,3 +7,5 @@ gem 'capistrano-bundler', '~> 1.1.0'
 gem 'pry'
 gem 'puppet'
 gem 'librarian-puppet'
+
+gem 'capistrano3-monit', path: '../../projects/capistrano3-monit'
