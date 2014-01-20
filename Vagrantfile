@@ -26,6 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.vm.box = "gb-base-box"
     puppet.vm.box_url = GB_BOX_URL
 
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 256
+    end
+
     puppet.vm.hostname = 'gb-puppet'
     puppet.vm.network :forwarded_port, host: 8443, guest: 8443
     puppet.vm.network :forwarded_port, host: 8080, guest: 8080
