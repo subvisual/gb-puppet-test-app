@@ -5,6 +5,7 @@ gem 'pry'
 gem 'puppet'
 gem 'librarian-puppet'
 gem 'puma'
+gem 'pg'
 
 gem 'capistrano',         '~> 3.2.1'
 gem 'capistrano-rails'

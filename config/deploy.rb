@@ -1,4 +1,4 @@
-set :repo_url, 'git://github.com/groupbuddies/gb-puppet-test-app'
+set :repo_url, 'git://github.com/groupbuddies/gb-puppet-test-app.git'
 
 server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
 
