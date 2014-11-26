@@ -9,7 +9,7 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-set :linked_files, %w{}
+set :linked_files, %w{.env}
 set :linked_dirs,  %w{log public/system}
 
 set :keep_releases, 3
