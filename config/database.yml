@@ -17,8 +17,8 @@ test:
 
 production:
   <<: *common
-  database: production_db
+  database: production
 
 staging:
   <<: *common
-  database: staging_db
+  database: staging
