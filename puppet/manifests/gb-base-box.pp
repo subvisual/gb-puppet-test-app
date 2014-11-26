@@ -1,5 +1,5 @@
 class { gb:
-  ruby_version    => 'ruby-2.0.0-p353',
+  ruby_version    => 'ruby-2.1.5',
   deploy_password => "password",
 }
 

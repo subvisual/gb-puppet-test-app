@@ -4,12 +4,12 @@
 
 First, download the repo:
 
-    git clone git://github.com/groupbuddies/gb-provisioning
-    cd gb-provisioning
+    git clone git://github.com/groupbuddies/gb-puppet-test-app
+    cd gb-puppet-test-app
 
 Fetch dependencies:
 
-    bundle
+    bundle install
     bundle exec librarian-puppet install
 
 Now follow one of the installation options:

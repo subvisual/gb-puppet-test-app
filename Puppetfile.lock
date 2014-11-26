@@ -1,56 +1,53 @@
 FORGE
-  remote: http://forge.puppetlabs.com
+  remote: https://forgeapi.puppetlabs.com
   specs:
-    jfryman/nginx (0.0.5)
-      puppetlabs/stdlib (>= 0.1.6)
-    puppetlabs/apt (1.4.0)
-      puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/concat (1.0.0-rc1)
-    puppetlabs/firewall (0.4.2)
-    puppetlabs/nodejs (0.4.0)
-      puppetlabs/apt (>= 0.0.3)
-      puppetlabs/stdlib (>= 2.0.0)
-    puppetlabs/postgresql (3.2.0)
-      puppetlabs/apt (< 2.0.0, >= 1.1.0)
-      puppetlabs/concat (< 2.0.0, >= 1.0.0)
-      puppetlabs/firewall (>= 0.0.4)
-      puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
-    puppetlabs/stdlib (4.1.0)
-    saz/sudo (2.2.0)
-
-GIT
-  remote: git://github.com/naps62/gb-puppet
-  ref: master
-  sha: d72f7fb0ed5141bf6627cb84bd5f893adeac712a
-  specs:
-    gb (0.0.1)
-      jfryman/nginx (>= 0.0.5)
-      puppetlabs/apt (>= 1.4.0)
-      puppetlabs/nodejs (>= 0.4.0)
-      puppetlabs/postgresql (>= 3.1.0)
-      saz/sudo (>= 2.2.0)
+    jfryman-nginx (0.0.5)
+      puppetlabs-stdlib (>= 0.1.6)
+    puppetlabs-apt (1.7.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.0.0-rc1)
+    puppetlabs-firewall (0.4.2)
+    puppetlabs-nodejs (0.4.0)
+      puppetlabs-apt (>= 0.0.3)
+      puppetlabs-stdlib (>= 2.0.0)
+    puppetlabs-postgresql (3.2.0)
+      puppetlabs-apt (< 2.0.0, >= 1.1.0)
+      puppetlabs-concat (< 2.0.0, >= 1.0.0)
+      puppetlabs-firewall (>= 0.0.4)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-stdlib (4.1.0)
+    saz-sudo (2.2.0)
 
 GIT
   remote: git://github.com/naps62/puppet-rvm
   ref: master
   sha: c46c181bb5c49d24cd13ca47378dbb6aa5222fba
   specs:
-    rvm (0.0.1)
+    naps62-rvm (0.0.1)
 
 GIT
   remote: git://github.com/nesi/puppet-git
   ref: 0.1.2
   sha: 56245322865b155d163fb83f52729aea70b97880
   specs:
-    git (0.1.2)
+    nesi-git (0.1.2)
+
+PATH
+  remote: ../puppet
+  specs:
+    naps62-gb (0.0.1)
+      jfryman-nginx (>= 0.0.5)
+      puppetlabs-apt (>= 1.4.0)
+      puppetlabs-nodejs (>= 0.4.0)
+      puppetlabs-postgresql (>= 3.1.0)
+      saz-sudo (>= 2.2.0)
 
 DEPENDENCIES
-  gb (>= 0)
-  git (>= 0)
-  jfryman/nginx (= 0.0.5)
-  puppetlabs/apt (= 1.4.0)
-  puppetlabs/nodejs (= 0.4.0)
-  puppetlabs/postgresql (= 3.2.0)
-  rvm (>= 0)
-  saz/sudo (= 2.2.0)
+  jfryman-nginx (= 0.0.5)
+  naps62-gb (>= 0)
+  naps62-rvm (>= 0)
+  nesi-git (>= 0)
+  puppetlabs-nodejs (= 0.4.0)
+  puppetlabs-postgresql (= 3.2.0)
+  saz-sudo (= 2.2.0)
 
