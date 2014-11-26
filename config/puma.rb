@@ -3,9 +3,12 @@ threads Integer(ENV['MIN_THREADS'] || 1), Integer(ENV['MAX_THREADS'] || 16)
 
 preload_app!
 
-# port        ENV['PORT'] || 3000
+port        ENV['PORT'] || 3000
 environment ENV['RAILS_ENV'] || 'development'
-bind "unix:///var/www/production/shared/sockets/puma.sock"
+
+if %w(production staging).include?(ENV['RAILS_ENV'])
+  bind "unix:///var/www/production/shared/sockets/puma.sock"
+end
 
 on_worker_boot do
   # worker specific setup
