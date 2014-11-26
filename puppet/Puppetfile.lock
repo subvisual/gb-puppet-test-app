@@ -1,0 +1,40 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    jfryman-nginx (0.2.1)
+      puppetlabs-apt (>= 1.0.0)
+      puppetlabs-concat (>= 1.1.0)
+      puppetlabs-stdlib (>= 3.0.0)
+    maestrodev-rvm (1.7.1)
+      puppetlabs-stdlib (>= 3.2.0)
+    puppetlabs-apt (1.7.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.1.2)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-nodejs (0.6.1)
+      puppetlabs-apt (>= 0.0.3)
+      puppetlabs-stdlib (>= 2.0.0)
+    puppetlabs-postgresql (4.1.0)
+      puppetlabs-apt (< 2.0.0, >= 1.1.0)
+      puppetlabs-concat (< 2.0.0, >= 1.1.0)
+      puppetlabs-stdlib (~> 4.0)
+    puppetlabs-stdlib (4.4.0)
+    puppetlabs-vcsrepo (1.2.0)
+    saz-sudo (3.0.9)
+      puppetlabs-stdlib (>= 2.3.0)
+
+PATH
+  remote: ../puppet
+  specs:
+    naps62-gb (0.0.1)
+      jfryman-nginx (>= 0.2.1)
+      maestrodev-rvm (>= 1.7.1)
+      puppetlabs-apt (>= 1.7.0)
+      puppetlabs-nodejs (>= 0.6.0)
+      puppetlabs-postgresql (>= 4.1.0)
+      puppetlabs-vcsrepo (>= 1.2.0)
+      saz-sudo (>= 3.0.1)
+
+DEPENDENCIES
+  naps62-gb (>= 0)
+

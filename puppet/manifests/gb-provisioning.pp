@@ -1,26 +1,32 @@
-/* class { gb: */
-/*   ruby_version    => 'ruby-2.1.5', */
-/*   deploy_password => "password", */
-/* } */
+$data = hiera('common')
+
+# base
+class { gb: }
 
 # Vagrant stuff. allow vagrant user to sudo
-/* sudo::conf { 'vagrant': */
-/*   priority => 01, */
-/*   content  => " */
-/* %vagrant ALL = NOPASSWD: ALL", */
-/* } */
+sudo::conf { 'vagrant':
+  priority => 01,
+  content  => "
+%vagrant ALL = NOPASSWD: ALL",
+}
 
-/* $data = hiera('gb-provisioning') */
+# install ruby 2.1.5
+gb::ruby { 'ruby-2.1.5': }
 
-/* gb::app::rails { 'production': */
-/*   port    => 8443, */
-/*   db_pass => $data[production][db_pass], */
-/*   url     => 'blog.groupbuddies.com', */
-/* } */
+# create both databases
+gb::postgresql { 'production':
+  password => $data[production][db_pass],
+}
 
-/* gb::app::rails { 'staging': */
-/*   port      => 8080, */
-/*   db_pass   => $data[staging][db_pass], */
-/*   url       => 'staging.blog.groupbuddies.com', */
-/*   rails_env => 'staging', */
-/* } */
+gb::postgresql { 'staging':
+  password => $data[staging][db_pass],
+}
+
+# set up nginx configs
+gb::nginx_conf { 'production':
+  path => 'config/nginx.production.conf',
+}
+
+gb::nginx_conf { 'staging':
+  path => 'config/nginx.staging.conf',
+}

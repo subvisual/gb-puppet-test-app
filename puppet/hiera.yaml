@@ -5,7 +5,6 @@
   - yaml
 
 :hierarchy:
-  - "%{hostname}"
   - common
 
 :yaml:

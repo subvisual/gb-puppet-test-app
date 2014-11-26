@@ -1,4 +1,4 @@
-set :repo_url, 'git://github.com/naps62/the_well_provisioned_test_app'
+set :repo_url, 'git://github.com/groupbuddies/gb-puppet-test-app'
 
 server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
 
@@ -9,7 +9,7 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{}
 set :linked_dirs,  %w{log public/system}
 
 set :keep_releases, 3
