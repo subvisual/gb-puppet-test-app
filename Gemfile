@@ -6,6 +6,7 @@ gem 'puppet'
 gem 'librarian-puppet'
 gem 'puma'
 gem 'pg'
+gem 'dotenv-rails'
 
 gem 'capistrano',         '~> 3.2.1'
 gem 'capistrano-rails'

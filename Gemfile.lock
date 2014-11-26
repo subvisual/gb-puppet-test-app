@@ -46,6 +46,9 @@ GEM
       puma (>= 2.6)
     coderay (1.1.0)
     colorize (0.7.3)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     facter (2.3.0)
       CFPropertyList (~> 2.2.6)
@@ -143,6 +146,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
+  dotenv-rails
   librarian-puppet
   pg
   pry
