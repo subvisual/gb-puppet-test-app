@@ -9,8 +9,10 @@ gem 'pg'
 gem 'dotenv-rails'
 gem 'foreman'
 
-gem 'capistrano',         '~> 3.2.1'
-gem 'capistrano-rails'
-gem 'capistrano-rvm'
-gem 'capistrano-bundler'
-gem 'capistrano3-puma'
+group :deploy do
+  gem 'capistrano',         '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-foreman'
+end
