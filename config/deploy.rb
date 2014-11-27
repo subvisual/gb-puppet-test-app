@@ -15,7 +15,7 @@ set :linked_dirs,  %w{log public/system}
 set :bundle_without, %w(development test deploy).join(' ')
 set :keep_releases, 3
 
-set :foreman_export_path, '/home/deploy/config/upstart/'
+set :foreman_export_path, '/home/deploy/.config/upstart/'
 
 namespace :deploy do
   desc 'Restart application'
