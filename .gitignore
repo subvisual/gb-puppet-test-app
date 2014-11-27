@@ -19,3 +19,4 @@
 puppet/modules/
 puppet/hieradata/*.yaml
 .tmp/
+.librarian/

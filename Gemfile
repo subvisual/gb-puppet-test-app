@@ -14,5 +14,5 @@ group :deploy do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
-  gem 'capistrano-foreman'
+  gem 'capistrano-foreman', github: 'jmcomets/capistrano-foreman'
 end
