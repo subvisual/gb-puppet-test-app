@@ -7,7 +7,7 @@ port        ENV['PORT'] || 3000
 environment ENV['RAILS_ENV'] || 'development'
 
 if %w(production staging).include?(ENV['RAILS_ENV'])
-  bind "unix:///var/www/production/shared/sockets/puma.sock"
+  bind "unix:///var/www/#{ENV['APP_NAME']}/shared/sockets/puma.sock"
 end
 
 on_worker_boot do

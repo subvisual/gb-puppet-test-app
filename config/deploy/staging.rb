@@ -5,6 +5,6 @@ set :branch, :master
 set :deploy_to, '/var/www/staging'
 
 set :foreman_options, {
-  app: application,
+  app: fetch(:application),
   log: File.join(shared_path, 'log')
 }
