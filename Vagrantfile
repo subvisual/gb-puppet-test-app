@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.hostname = 'gb-puppet'
-  config.vm.network :forwarded_port, host: 8443, guest: 8443
-  config.vm.network :forwarded_port, host: 8080, guest: 8080
+  config.vm.network :forwarded_port, host: 8443, guest: 443
+  config.vm.network :forwarded_port, host: 8080, guest: 80
 
   # config.vm.provision :shell, path: 'scripts/upgrade_puppet.sh'
   config.vm.provision :puppet do |puppet_conf|
