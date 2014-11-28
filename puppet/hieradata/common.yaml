@@ -1,6 +1,0 @@
----
-common:
-  production:
-    db_pass: "password"
-  staging:
-    db_pass: "password"

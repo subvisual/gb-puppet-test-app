@@ -1,8 +1,5 @@
 $data = hiera('common')
 
-# base
-class { gb: }
-
 # Vagrant stuff. allow vagrant user to sudo
 sudo::conf { 'vagrant':
   priority => 01,

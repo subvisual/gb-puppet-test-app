@@ -4,7 +4,6 @@ set :rails_env, :production
 set :branch, :master
 set :deploy_to, '/var/www/production'
 
-set :foreman_options, {
-  app: fetch(:application),
-  log: File.join(shared_path, 'log')
-}
+server '128.199.51.99', user: 'deploy', roles: %w{web app db}, primary: true
+
+set :ssh_options, { forward_agent: true }

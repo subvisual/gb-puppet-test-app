@@ -1,0 +1,6 @@
+---
+common:
+  production:
+    db_pass: "production"
+  staging:
+    db_pass: "staging"
