@@ -12,14 +12,20 @@ set :linked_dirs,  %w{log public/system}
 set :bundle_without, %w(development test deploy).join(' ')
 set :keep_releases, 3
 
+set :foreman_user_sudo, true
 set :foreman_export_path, '/home/deploy/.init'
+set :foreman_options, {
+  user: 'deploy'
+}
 
 namespace :deploy do
   desc 'Restart application'
-  after :finishing, 'deploy:cleanup'
-  after :finishing, 'foreman:export'
-
-  task :test do
-    puts fetch(:rvm_map_bins)
+  task :restart do
+    invoke 'foreman:stop'
+    invoke 'foreman:export'
+    invoke 'foreman:restart'
   end
+
+  after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:restart'
 end

@@ -1,12 +1,5 @@
 $data = hiera('common')
 
-# Vagrant stuff. allow vagrant user to sudo
-sudo::conf { 'vagrant':
-  priority => 01,
-  content  => "
-%vagrant ALL = NOPASSWD: ALL",
-}
-
 # install ruby 2.1.5
 gb::ruby { 'ruby-2.1.5': }
 
