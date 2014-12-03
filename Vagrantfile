@@ -15,5 +15,6 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, host: 8443, guest: 443
   config.vm.network :forwarded_port, host: 8080, guest: 80
 
+  config.vm.provision :shell, inline: "apt-get update && apt-get install --yes curl"
   config.vm.provision :shell, inline: "curl -s #{GB_PUPPET_SCRIPT_URL} | bash -"
 end
