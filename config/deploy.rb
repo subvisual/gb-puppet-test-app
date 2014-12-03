@@ -1,5 +1,8 @@
 set :repo_url, 'git://github.com/groupbuddies/gb-puppet-test-app.git'
 
+server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
+set :ssh_options, { port: 2222, forward_agent: true }
+
 set :format, :pretty
 set :log_level, :debug
 set :pty, true
@@ -19,11 +22,18 @@ set :foreman_options, {
 }
 
 namespace :deploy do
+  task :stop do
+    begin
+      invoke 'foreman:stop'
+    rescue
+    end
+  end
+
   desc 'Restart application'
   task :restart do
-    invoke 'foreman:stop'
+    invoke 'deploy:stop'
     invoke 'foreman:export'
-    invoke 'foreman:restart'
+    invoke 'foreman:start'
   end
 
   after :finishing, 'deploy:cleanup'
