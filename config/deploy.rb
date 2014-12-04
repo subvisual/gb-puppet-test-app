@@ -4,7 +4,7 @@ server '178.62.191.139', user: 'deploy', roles: %w{web app db}, primary: true
 set :ssh_options, { forward_agent: true }
 
 set :format, :pretty
-set :log_level, :debug
+set :log_level, :info
 set :pty, true
 
 set :rvm_ruby_version, '2.1.5'
