@@ -1,7 +1,7 @@
 set :repo_url, 'git://github.com/groupbuddies/gb-puppet-test-app.git'
 
-server 'localhost', user: 'deploy', roles: %w{web app db}, primary: true
-set :ssh_options, { port: 2222, forward_agent: true }
+server '178.62.191.139', user: 'deploy', roles: %w{web app db}, primary: true
+set :ssh_options, { forward_agent: true }
 
 set :format, :pretty
 set :log_level, :debug
